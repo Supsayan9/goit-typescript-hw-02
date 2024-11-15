@@ -1,0 +1,18 @@
+.cardItem {
+  cursor: pointer;
+}
+
+.cardImageContainer {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cardImageContainer img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.cardImageContainer img:hover {
+  transform: scale(1.05);
+}
