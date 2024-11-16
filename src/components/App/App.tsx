@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 import styles from "../ImageGallery/ImageGallery.module.css";
 import SearchBar from "../SearchBar/SearchBar";
-import LoadMoreBtn from "../LoadMoreBtn";
+import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import LoaderComponent from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import { fetchImages } from "../Services/api";
