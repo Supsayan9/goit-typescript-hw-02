@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
-import styles from "../ImageGallery/ImageGallery.module.css";
+import styles from "./App.module.css";
 import SearchBar from "../SearchBar/SearchBar";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import LoaderComponent from "../Loader/Loader";
@@ -81,11 +81,11 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className={styles.app}>
       <Toaster />
       <SearchBar onSubmit={handleSearchSubmit} />
-      {isLoading && <div className={styles.loader} />}
-      {error && <div className={styles.errorMessage}>{error}</div>}
+      {isLoading && <LoaderComponent />}
+      {error && <ErrorMessage message={error} />}
       <div className={styles.gallery}>
         {images.map((image) => (
           <img
@@ -98,9 +98,7 @@ const App: React.FC = () => {
         ))}
       </div>
       {page < totalPages && !isLoading && !error && (
-        <button className={styles.loadMoreBtn} onClick={handleNextPage}>
-          Load More
-        </button>
+        <LoadMoreBtn onClick={handleNextPage} />
       )}
       {selectedImage && (
         <ImageModal
