@@ -3,7 +3,7 @@ import styles from "./ImageGallery.module.css";
 interface Image {
   id: string;
   urls: {
-    small: string,
+    small: string;
   };
   alt_description?: string;
 }
